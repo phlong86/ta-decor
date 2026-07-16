@@ -1,0 +1,5 @@
+# khách vào thẳng index.html; SPA nên trỏ mọi route về trang chủ
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

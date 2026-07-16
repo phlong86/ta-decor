@@ -1,0 +1,87 @@
+<!-- @dsCard group="Website" viewport="1440x860" name="Trang chủ TA-Decor" subtitle="Homepage — hero, services, portfolio, process, testimonials, consultation form" -->
+<!-- @startingPoint section="Website" subtitle="Full TA-Decor homepage" viewport="1440x900" -->
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TA-Decor — Thiết kế & thi công nội thất, quảng cáo trọn gói</title>
+<meta name="description" content="TA-Decor: chuyên thiết kế và thi công nội thất, bảng hiệu quảng cáo trọn gói cho nhà ở, văn phòng, showroom và doanh nghiệp. Kiến tạo không gian – Nâng tầm thương hiệu.">
+<meta property="og:title" content="TA-Decor — Kiến tạo không gian, Nâng tầm thương hiệu">
+<meta property="og:description" content="Thiết kế & thi công nội thất, quảng cáo trọn gói.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font-body);background:var(--bg-page);color:var(--text-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--link)}a:hover{color:var(--link-hover)}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1!important;transform:none!important;transition:none}}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#294b5b"/><path d="M50 26 L68 62 H58 L50 45 L42 62 H32 Z" fill="#46c6d2"/><rect x="30" y="70" width="40" height="5" rx="2.5" fill="#e08a2b"/></svg>
+</template>
+<div id="root"></div>
+<!-- Form tĩnh ẩn để Netlify nhận diện khi deploy (form thật do React dựng, bot không đọc được JSX) -->
+<form name="tu-van" netlify netlify-honeypot="company_website" hidden>
+  <input type="text" name="name" />
+  <input type="tel" name="phone" />
+  <input type="email" name="email" />
+  <input type="text" name="service" />
+  <input type="text" name="budget" />
+  <textarea name="msg"></textarea>
+</form>
+<script src="data.js"></script>
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="Sections.jsx"></script>
+<script type="text/babel" src="Sections2.jsx"></script>
+<script type="text/babel" src="Sections3.jsx"></script>
+<script type="text/babel" data-presets="react">
+function App() {
+  const NS = window.TADecorDesignSystem_573d7b;
+  const { FloatingContact } = NS;
+  const { company } = window.TAD;
+  return (
+    <React.Fragment>
+      <Header />
+      <main>
+        <Hero />
+        <IntroSection />
+        <ServiceSection />
+        <FeaturedProjects />
+        <WhyChooseUs />
+        <WorkProcess />
+        <BeforeAfterSection />
+        <PartnerLogos />
+        <Testimonials />
+        <NewsSection />
+        <ConsultationForm />
+      </main>
+      <Footer />
+      <FloatingContact hotline={company.hotline} zaloUrl={company.zaloUrl} messengerUrl={company.messengerUrl} />
+    </React.Fragment>
+  );
+}
+function boot() {
+  if (!window.TADecorDesignSystem_573d7b || !window.Header) { return setTimeout(boot, 60); }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  setTimeout(() => {
+    if (window.lucide) lucide.createIcons();
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+    document.querySelectorAll('main > section').forEach((s) => { s.classList.add('reveal'); io.observe(s); });
+  }, 200);
+}
+boot();
+</script>
+</body>
+</html>
