@@ -1,0 +1,158 @@
+/* TA-Decor webfonts.
+   NOTE (font substitution): the logo wordmark uses a bespoke techno display face
+   that is not distributed. We pair Google Fonts that carry full Vietnamese
+   diacritics and match the brand's strong-geometric / clean-readable intent:
+   - Sora        → display / headings (geometric, confident, luxury-tech feel)
+   - Be Vietnam Pro → body & UI (designed for Vietnamese, highly readable)
+   If you have the original licensed display face, drop the files here and
+   replace these @import lines with local @font-face rules. */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* TA-Decor — Color tokens. Derived from the brand logo:
+   deep slate-teal (mark), cyan-teal (mark highlight), warm amber (action accent). */
+:root {
+  /* ---- Base palette ---- */
+  --white: #ffffff;
+  --ink-900: #0f1e25;   /* darkest text / near-black teal */
+  --ink-800: #16262f;
+  --slate-900: #1b333f;
+  --slate-800: #294b5b;  /* brand deep slate-teal (logo) */
+  --slate-700: #34606f;
+  --slate-500: #5b7883;
+  --slate-400: #7c939c;
+  --slate-300: #a7bac1;
+
+  --cyan-600: #2b96a1;
+  --cyan-500: #38adb8;   /* brand cyan-teal (logo text) */
+  --cyan-400: #46c6d2;   /* bright highlight (logo left leg) */
+  --cyan-100: #d6eef1;
+  --cyan-50:  #eef8f9;
+
+  --amber-600: #c7761d;  /* action pressed */
+  --amber-500: #e08a2b;  /* action / CTA accent */
+  --amber-100: #fbe8cf;
+
+  /* neutrals / surfaces */
+  --mist-50:  #f5f7f8;   /* page alt background */
+  --mist-100: #eef2f4;
+  --cloud-200:#e2e8ea;
+  --line-300: #d3dcdf;   /* hairline borders */
+
+  --success: #2f9e6b;
+  --danger:  #d8503a;
+  --warning: #e0a52b;
+
+  /* ---- Semantic aliases ---- */
+  --bg-page: var(--white);
+  --bg-alt: var(--mist-50);
+  --bg-inverse: var(--slate-900);
+  --bg-inverse-deep: var(--ink-900);
+
+  --surface-card: var(--white);
+  --surface-sunken: var(--mist-100);
+  --surface-tint: var(--cyan-50);
+
+  --text-strong: var(--ink-800);
+  --text-body: #33474f;
+  --text-muted: var(--slate-500);
+  --text-faint: var(--slate-400);
+  --text-on-dark: #eaf1f3;
+  --text-on-dark-muted: #a7bcc4;
+
+  --brand: var(--slate-800);
+  --brand-cyan: var(--cyan-500);
+  --brand-cyan-bright: var(--cyan-400);
+  --accent: var(--amber-500);
+  --accent-hover: var(--amber-600);
+
+  --border: var(--line-300);
+  --border-strong: var(--slate-300);
+  --border-on-dark: rgba(255,255,255,0.14);
+
+  --focus-ring: var(--cyan-400);
+  --link: var(--cyan-600);
+  --link-hover: var(--slate-800);
+}
+
+/* TA-Decor — Typography tokens */
+:root {
+  --font-display: 'Sora', 'Be Vietnam Pro', system-ui, sans-serif;
+  --font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Sora', ui-monospace, monospace;
+
+  /* Type scale (fluid-ish, fixed here for the DS) */
+  --fs-display: 4rem;     /* 64 — hero */
+  --fs-h1: 3rem;          /* 48 */
+  --fs-h2: 2.25rem;       /* 36 */
+  --fs-h3: 1.625rem;      /* 26 */
+  --fs-h4: 1.25rem;       /* 20 */
+  --fs-lead: 1.25rem;     /* 20 — intro paragraphs */
+  --fs-body: 1rem;        /* 16 */
+  --fs-sm: 0.875rem;      /* 14 */
+  --fs-xs: 0.75rem;       /* 12 — captions, eyebrows */
+
+  --lh-tight: 1.08;   /* @kind other */
+  --lh-snug: 1.25;    /* @kind other */
+  --lh-normal: 1.6;   /* @kind other */
+
+  --fw-regular: 400;   /* @kind other */
+  --fw-medium: 500;    /* @kind other */
+  --fw-semibold: 600;  /* @kind other */
+  --fw-bold: 700;      /* @kind other */
+  --fw-extrabold: 800; /* @kind other */
+
+  --tracking-eyebrow: 0.22em; /* @kind other */
+  --tracking-tight: -0.02em;   /* @kind other */
+  --tracking-normal: 0;        /* @kind other */
+}
+
+/* TA-Decor — Spacing, sizing, radii */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --section-y: clamp(64px, 9vw, 128px);  /* @kind spacing */
+  --container: 1280px;                    /* max content width */
+  --container-narrow: 820px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --control-h: 48px;      /* default button / input height */
+  --control-h-sm: 40px;
+  --control-h-lg: 56px;
+}
+
+/* TA-Decor — Shadows, borders, motion */
+:root {
+  --shadow-xs: 0 1px 2px rgba(15,30,37,0.06);
+  --shadow-sm: 0 2px 8px rgba(15,30,37,0.07);
+  --shadow-md: 0 10px 30px rgba(15,30,37,0.10);
+  --shadow-lg: 0 24px 60px rgba(15,30,37,0.16);
+  --shadow-cyan: 0 12px 34px rgba(56,173,184,0.28);
+  --shadow-amber: 0 12px 30px rgba(224,138,43,0.34);
+
+  --ring: 0 0 0 3px rgba(70,198,210,0.45);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);   /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 140ms;  /* @kind other */
+  --dur: 240ms;       /* @kind other */
+  --dur-slow: 480ms;  /* @kind other */
+
+  /* diagonal brand sheen used behind dark hero / CTA blocks */
+  --grad-brand: linear-gradient(135deg, #1b333f 0%, #294b5b 55%, #2b96a1 130%); /* @kind other */
+  --grad-cyan: linear-gradient(120deg, #46c6d2 0%, #38adb8 100%);  /* @kind other */
+  --grad-amber: linear-gradient(120deg, #e8a247 0%, #e08a2b 100%); /* @kind other */
+}

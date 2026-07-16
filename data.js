@@ -3,14 +3,18 @@ window.TAD = {
   company: {
     name: 'Công Ty TNHH TM Quảng Cáo & Nội Thất TA-Decor',
     shortName: 'TA-Decor',
+    logo: 'https://res.cloudinary.com/os8ymahz/image/upload/f_auto,q_auto/ta-decor_etwqq4',
     tagline: 'Advertising · Interior · Design',
     hotline: '0846 316 316 - 0944 478 448',
     hotlineRaw: '0846316316',
     zaloUrl: 'https://zalo.me/0846316316',
     facebookUrl: 'https://www.facebook.com/profile.php?id=100068595892359',
     messengerUrl: 'https://m.me/100068595892359',
+    tiktokUrl: 'https://www.tiktok.com/@tadecorbmt',
     email: 'tadecor@gmail.com',
-    address: 'https://www.google.com/maps/place/C%C3%B4ng+Ty+TNHH+TM+Qu%E1%BA%A3ng+C%C3%A1o+V%C3%A0+N%E1%BB%99i+Th%E1%BA%A5t+Ta-Decor/@12.6952596,108.0348368,21z/data=!4m6!3m5!1s0x31721d26e84fe62b:0x433ad21ad481f5d8!8m2!3d12.6952595!4d108.0349735!16s%2Fg%2F11jpsp6yzn?entry=ttu&g_ep=EgoyMDI2MDcxMy4wIKXMDSoASAFQAw%3D%3D',
+    address: 'Số 11 Đường A12 - Thôn 1 - Xã Cư Êbur, Buôn Ma Thuột, Việt Nam, 63112',
+    googleMapUrl: 'https://www.google.com/maps/place/C%C3%B4ng+Ty+TNHH+TM+Qu%E1%BA%A3ng+C%C3%A1o+V%C3%A0+N%E1%BB%99i+Th%E1%BA%A5t+Ta-Decor/@12.6952595,108.0349735,17z/data=!3m1!4b1!4m6!3m5!1s0x31721d26e84fe62b:0x433ad21ad481f5d8!8m2!3d12.6952595!4d108.0349735!16s%2Fg%2F11jpsp6yzn?entry=ttu',
+    hours: 'Thứ 2 – Thứ 7, 8:00 – 17:30',
   },
   nav: [
     { label: 'Trang chủ', href: '#' },
@@ -71,5 +75,5 @@ window.TAD = {
     { tag: 'Kinh nghiệm', title: 'Chọn bảng hiệu quảng cáo: chất liệu nào bền và đẹp nhất?', date: '28/05/2024', read: '6 phút đọc' },
     { tag: 'Báo giá', title: 'Chi phí thi công nội thất trọn gói 2024 gồm những gì?', date: '15/05/2024', read: '8 phút đọc' },
   ],
-  budgets: ['Dưới 10 triệu', '10 – 20 triệu', '20 – 30 triệu', '30 triệu – 40 triệu', 'Trên 40 triệu'],
+  budgets: ['Dưới 100 triệu', '100 – 300 triệu', '300 – 500 triệu', '500 triệu – 1 tỷ', 'Trên 1 tỷ'],
 };
